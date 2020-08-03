@@ -1,32 +1,21 @@
 import express from 'express'
-import cors from 'cors'
-// import mongoose from 'mongoose'
+import initMiddlewares from './middlewares.init'
+import initDatabases from './databases.init'
+import initRoutes from './routes.init'
 
 class App {
-    public express: express.Application;
+    public app: express.Application;
 
     public constructor () {
-      this.express = express()
-
-      this.middlewares()
-      this.database()
-      this.routes()
+      this.app = express()
+      this.init()
     }
 
-    private middlewares () {
-      this.express.use(express.json())
-      this.express.use(cors()) // improving this, is a mess
-    }
-
-    private database () {
-    //   mongoose.connect()
-    }
-
-    private routes () {
-      this.express.get('/', (req, res) => {
-        return res.send('Hello World!!!')
-      })
+    private init () {
+      initMiddlewares(this.app)
+      initDatabases()
+      initRoutes(this.app)
     }
 }
 
-export default new App().express
+export default new App().app
