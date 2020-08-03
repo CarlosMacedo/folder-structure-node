@@ -1,21 +1,10 @@
 import express from 'express'
-import initMiddlewares from './middlewares.init'
-import initDatabases from './databases.init'
-import initRoutes from './routes.init'
+import { initDatabases, initMiddlewares, initRouters } from './init'
 
-class App {
-    public app: express.Application;
+const app = express()
 
-    public constructor () {
-      this.app = express()
-      this.init()
-    }
+initMiddlewares(app)
+initRouters(app)
+initDatabases()
 
-    private init () {
-      initMiddlewares(this.app)
-      initDatabases()
-      initRoutes(this.app)
-    }
-}
-
-export default new App().app
+export default app
