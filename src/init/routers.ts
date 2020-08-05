@@ -1,14 +1,10 @@
-import express, { Router } from 'express'
-import { createMeRouter } from '../routes/me.router'
+import express from 'express'
+import config from 'config'
+
+import { createRouterMe } from '../controller/routes/me/router'
 
 export function initRouters (app: express.Application): void {
-  routers().forEach(router => {
-    app.use('/api/v1/me', router)
-  })
-}
+  const apiUrl = config.get('apiUrl')
 
-function routers (): Router[] {
-  return [
-    createMeRouter()
-  ]
+  app.use(`${apiUrl}/me`, createRouterMe())
 }

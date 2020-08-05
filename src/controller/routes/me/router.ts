@@ -1,7 +1,7 @@
 import express, { Router } from 'express'
-import { getMe } from './me'
+import { getMe } from './get'
 
-export function createMeRouter (): Router {
+export function createRouterMe (): Router {
   const meRouter = express.Router()
 
   meRouter
