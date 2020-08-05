@@ -1,7 +1,7 @@
 import app from './app'
 import config from 'config'
 import Debug from 'debug'
-const startupDebugger = Debug('startup')
+const startupDebugger = Debug('app:startup')
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {

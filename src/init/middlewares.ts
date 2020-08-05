@@ -5,7 +5,7 @@ import morgan from 'morgan'
 import Debug from 'debug'
 
 import { hw } from '../controller/middlewares/helloworld'
-const middlewareDebugger = Debug('middleware')
+const middlewareDebugger = Debug('app:middleware')
 
 export function initMiddlewares (app: express.Application): void {
   if (process.env.Node_ENV !== 'production') {
