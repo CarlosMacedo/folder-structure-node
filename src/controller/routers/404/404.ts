@@ -1,10 +1,9 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import { AppError } from '../../handleErrors/models/appError';
+import { catchAsync } from '../../handleErrors/utils/catchAsync';
 
-export const notFound = (req: Request, res: Response): Response<Response> => {
-  return res.status(404).send({
-    status: 'fail',
-    data: {
-      message: `Can't find ${req.originalUrl} on this server!`
-    }
-  });
-};
+export const notFound = catchAsync(
+  async (req: Request, res: Response, next: NextFunction): void => {
+    throw new AppError(`Can't find ${req.originalUrl} on this server! :(`, 404);
+  }
+);
