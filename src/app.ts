@@ -1,10 +1,16 @@
-import express from 'express'
-import { initDatabases, initMiddlewares, initRouters } from './init'
+import express from 'express';
+import {
+  initDatabases,
+  initMiddlewares,
+  initRouters,
+  initHandleErrors
+} from './init';
 
-const app = express()
+const app = express();
 
-initMiddlewares(app)
-initRouters(app)
-initDatabases()
+initMiddlewares(app);
+initRouters(app);
+initDatabases();
+initHandleErrors(app);
 
-export default app
+export default app;

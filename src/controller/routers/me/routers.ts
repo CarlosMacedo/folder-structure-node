@@ -1,12 +1,10 @@
-import express, { Router } from 'express'
-import { getMe } from './get'
+import express, { Router } from 'express';
+import { getMe } from './get';
 
-export function createRouterMe (): Router {
-  const meRouter = express.Router()
+export function createRouterMe(): Router {
+  const meRouter = express.Router();
 
-  meRouter
-    .route('/')
-    .get(getMe)
+  meRouter.route('/').get(getMe);
 
-  return meRouter
+  return meRouter;
 }

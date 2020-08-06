@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { Request, Response } from 'express';
 
 export const notFound = (req: Request, res: Response): Response<Response> => {
   return res.status(404).send({
@@ -6,5 +6,5 @@ export const notFound = (req: Request, res: Response): Response<Response> => {
     data: {
       message: `Can't find ${req.originalUrl} on this server!`
     }
-  })
-}
+  });
+};

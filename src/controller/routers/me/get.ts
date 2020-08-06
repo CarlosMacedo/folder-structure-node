@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { Request, Response } from 'express';
 
 export const getMe = (req: Request, res: Response): Response<Response> => {
   return res.status(200).json({
@@ -6,5 +6,5 @@ export const getMe = (req: Request, res: Response): Response<Response> => {
     data: {
       message: 'Hello World!'
     }
-  })
-}
+  });
+};

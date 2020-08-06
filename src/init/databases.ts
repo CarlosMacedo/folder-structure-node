@@ -1,3 +1,3 @@
-export function initDatabases (): void {
+export function initDatabases(): void {
   // TODO
 }

@@ -1,11 +1,11 @@
-import express from 'express'
-import config from 'config'
+import express from 'express';
+import config from 'config';
 
-import { createRouterMe, createRouterNotFound } from '../controller/routers'
+import { createRouterMe, createRouterNotFound } from '../controller/routers';
 
-export function initRouters (app: express.Application): void {
-  const apiUrl = config.get('apiUrl')
+export function initRouters(app: express.Application): void {
+  const apiUrl = config.get('apiUrl');
 
-  app.use(`${apiUrl}/me`, createRouterMe())
-  app.all('*', createRouterNotFound())
+  app.use(`${apiUrl}/me`, createRouterMe());
+  app.all('*', createRouterNotFound());
 }
