@@ -14,7 +14,8 @@ export function initDatabases(): void {
     .connect(dbUrl, {
       useNewUrlParser: true,
       useCreateIndex: true,
-      useFindAndModify: true
+      useFindAndModify: true,
+      useUnifiedTopology: true
     })
     .then((c) => {
       dbDebugger(c.connections);
