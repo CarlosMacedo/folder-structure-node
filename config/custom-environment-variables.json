@@ -1,3 +1,7 @@
 {
-    "password": "app_password"
+  "password": "app_password",
+  "db": {
+    "name": "db_name",
+    "password": "db_password"
+  }
 }
