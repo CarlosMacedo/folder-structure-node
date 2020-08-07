@@ -17,11 +17,23 @@ export class AppError extends Error {
     return this._statusCode;
   }
 
+  set statusCode(statusCode: number) {
+    this._statusCode = statusCode;
+  }
+
   get status(): string {
     return this._status;
   }
 
+  set status(status: string) {
+    this._status = status;
+  }
+
   get isOperational(): boolean {
     return this._isOperational;
+  }
+
+  set isOperational(isOperational: boolean) {
+    this._isOperational = isOperational;
   }
 }

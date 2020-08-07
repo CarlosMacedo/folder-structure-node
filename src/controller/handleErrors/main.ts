@@ -6,8 +6,10 @@ export function handleErrors(
   res: Response,
   next: NextFunction
 ): Response<Response> {
+  err.statusCode = err.statusCode || 500;
+
   return res.status(err.statusCode).json({
-    status: err.status,
+    status: err.status || 'error',
     data: {
       message: err.message || err.status || 'Internal error'
     }
