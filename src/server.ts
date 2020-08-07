@@ -4,12 +4,21 @@ import config from 'config';
 import Debug from 'debug';
 const startupDebugger = Debug('app:startup');
 
+process.on('uncaughtException', (err) => {
+  console.log(err);
+  console.log('UncaughtException. Shutting down...');
+  process.exit(1);
+});
+
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  startupDebugger(
-    `Listening on port ${port}...`,
-    config.get('name'),
-    'Node_ENV:',
-    process.env.Node_ENV
-  );
+const server = app.listen(port, () => {
+  startupDebugger(`Listening on port ${port}...`, config.get('name'));
+});
+
+process.on('unhandledRejection', (err) => {
+  console.log(err);
+  console.log('UnhandledRejection. Shutting down...');
+  server.close(() => {
+    process.exit(1);
+  });
 });

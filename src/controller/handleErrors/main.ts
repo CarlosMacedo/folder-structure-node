@@ -1,17 +1,19 @@
 import { Request, Response, NextFunction } from 'express';
+import { development, production } from './environment';
+import { AppError } from '../handleErrors/models/appError';
 
 export function handleErrors(
-  err: any,
+  err: AppError,
   req: Request,
   res: Response,
   next: NextFunction
 ): Response<Response> {
   err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
 
-  return res.status(err.statusCode).json({
-    status: err.status || 'error',
-    data: {
-      message: err.message || err.status || 'Internal error'
-    }
-  });
+  if (process.env.NODE_ENV === 'development') {
+    return development(err, req, res, next);
+  } else if (process.env.NODE_ENV === 'production') {
+    return production(err, req, res, next);
+  }
 }
