@@ -1,3 +1,4 @@
+require('express-async-errors');
 import app from './app';
 import config from 'config';
 import Debug from 'debug';
