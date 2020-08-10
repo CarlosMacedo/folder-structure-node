@@ -7,10 +7,9 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import Debug from 'debug';
+import { middlewareDebugger } from '../shared/utils';
 import { hw } from '../controller/middlewares/helloworld';
 
-const middlewareDebugger = Debug('app:middleware');
 const limiter = rateLimit({
   max: 1000,
   windowMs: 60 * 60 * 1000, //in 1h

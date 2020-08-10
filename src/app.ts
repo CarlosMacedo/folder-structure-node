@@ -1,4 +1,6 @@
 import express from 'express';
+import { getMongoDBUrl } from './shared/utils';
+
 import {
   initDatabases,
   initMiddlewares,
@@ -10,7 +12,7 @@ const app = express();
 
 initMiddlewares(app);
 initRouters(app);
-initDatabases();
+const loggerMongoDB = initDatabases(getMongoDBUrl());
 initHandleErrors(app);
 
-export default app;
+export { app, loggerMongoDB };

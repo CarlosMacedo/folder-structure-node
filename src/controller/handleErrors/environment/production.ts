@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../../handleErrors/models/appError';
+import { loggerMongoDB } from '../../../app';
 
 export function production(
   err: AppError,
@@ -15,7 +16,8 @@ export function production(
       }
     });
   } else {
-    //save log with winston here
+    loggerMongoDB.saveLog(err);
+
     return res.status(err.statusCode).json({
       status: 'error',
       data: {

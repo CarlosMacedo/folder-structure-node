@@ -1,8 +1,7 @@
-require('express-async-errors');
-import app from './app';
+import 'express-async-errors';
 import config from 'config';
-import Debug from 'debug';
-const startupDebugger = Debug('app:startup');
+import { app } from './app';
+import { startupDebugger } from './shared/utils';
 
 process.on('uncaughtException', (err) => {
   console.log(err);
@@ -19,6 +18,14 @@ process.on('unhandledRejection', (err) => {
   console.log(err);
   console.log('UnhandledRejection. Shutting down...');
   server.close(() => {
+    process.exit(1);
+  });
+});
+
+process.on('SIGTERM', () => {
+  console.log('SIGTERM RECEIVED. Server closing...');
+  server.close(() => {
+    console.log('Server closed!');
     process.exit(1);
   });
 });

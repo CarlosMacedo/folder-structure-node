@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/server.ts",
-    "start:dev": "NODE_ENV=development db_name=<nametest> db_password=<passwordtest> DEBUG=app:middleware,app:startup,app:errors,app:db nodemon src/server.ts",
+    "start:dev": "NODE_ENV=development DB_NAME=<nametest> DB_PASSWORD=<passwordtest> DEBUG=app:middleware,app:startup,app:errors,app:db nodemon src/server.ts",
     "start:prod": "NODE_ENV=production nodemon src/server.ts",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "debug": "ndb src/server.ts"
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/CarlosMacedo/folder-structure-node.git"
   },
-  "author": "",
+  "author": "Carlos Macêdo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CarlosMacedo/folder-structure-node/issues"

@@ -1,15 +1,8 @@
 import mongoose from 'mongoose';
-import config from 'config';
-import Debug from 'debug';
-const dbDebugger = Debug('app:db');
+import { Log } from '../shared/utils';
+import { dbDebugger } from '../shared/utils';
 
-export function initDatabases(): void {
-  let dbUrl: string = config.get('db.url');
-  const dbName: string = config.get('db.name');
-  const dbPassword: string = config.get('db.password');
-  dbUrl = dbUrl.replace('<dbname>', dbName);
-  dbUrl = dbUrl.replace('<password>', dbPassword);
-
+export function initDatabases(dbUrl: string): Log {
   mongoose
     .connect(dbUrl, {
       useNewUrlParser: true,
@@ -20,4 +13,6 @@ export function initDatabases(): void {
     .then((c) => {
       dbDebugger('DB connection successful!');
     });
+
+  return new Log(dbUrl, 'logs');
 }
