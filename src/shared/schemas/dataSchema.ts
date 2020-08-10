@@ -38,4 +38,4 @@ const data = new Schema({
   }
 });
 
-export const dataSchema = model<IData>('Data', data);
+export const DataSchema = model<IData>('Data', data);
