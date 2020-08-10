@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Fawn from 'fawn';
 import { Log } from '../shared/utils';
 import { dbDebugger } from '../shared/utils';
 
@@ -12,6 +13,7 @@ export function initDatabases(dbUrl: string): Log {
     })
     .then((c) => {
       dbDebugger('DB connection successful!');
+      Fawn.init(mongoose);
     });
 
   return new Log(dbUrl, 'logs');
