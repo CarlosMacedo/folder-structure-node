@@ -1,4 +1,7 @@
 {
-    "name": "My app",
-    "apiUrl": "/api/v1"
+  "name": "My app",
+  "apiUrl": "/api/v1",
+  "jwt": {
+    "expiresIn": "90d"
+  }
 }

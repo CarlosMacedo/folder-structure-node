@@ -9,7 +9,7 @@ export function initDatabases(): void {
   const dbPassword: string = config.get('db.password');
   dbUrl = dbUrl.replace('<dbname>', dbName);
   dbUrl = dbUrl.replace('<password>', dbPassword);
-  console.log(dbUrl);
+
   mongoose
     .connect(dbUrl, {
       useNewUrlParser: true,
@@ -18,7 +18,6 @@ export function initDatabases(): void {
       useUnifiedTopology: true
     })
     .then((c) => {
-      dbDebugger(c.connections);
       dbDebugger('DB connection successful!');
     });
 }

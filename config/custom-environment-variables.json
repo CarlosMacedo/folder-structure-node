@@ -1,7 +1,11 @@
 {
-  "password": "app_password",
+  "password": "APP_PASSWORD",
+  "jwt": {
+    "secret": "JWT_SECRET",
+    "expiresIn": "EXPIRES_IN"
+  },
   "db": {
-    "name": "db_name",
-    "password": "db_password"
+    "name": "DB_NAME",
+    "password": "DB_PASSWORD"
   }
 }
