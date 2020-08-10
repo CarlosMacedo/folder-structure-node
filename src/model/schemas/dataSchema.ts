@@ -1,7 +1,14 @@
-import mongoose from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 import validator from 'validator';
 
-export const dataSchema = new mongoose.Schema({
+interface IData extends Document {
+  name: string;
+  data?: string;
+  number?: string;
+  password: string;
+}
+
+const data = new Schema({
   name: {
     type: String,
     required: [true, 'Provide a name, please.'],
@@ -30,3 +37,5 @@ export const dataSchema = new mongoose.Schema({
     select: false
   }
 });
+
+export const dataSchema = model<IData>('Data', data);
