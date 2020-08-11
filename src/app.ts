@@ -1,5 +1,5 @@
 import express from 'express';
-import { getMongoDBUrl } from './shared/utils';
+import { getMongoDBUrl } from '@utils';
 
 import {
   initDatabases,

@@ -7,8 +7,8 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import { middlewareDebugger } from '../shared/utils';
-import { hw } from '../controller/middlewares/helloworld';
+import { middlewareDebugger } from '@utils';
+import { hw } from '@middlewares/helloworld';
 
 const limiter = rateLimit({
   max: 1000,

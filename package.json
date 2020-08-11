@@ -21,6 +21,15 @@
     "url": "https://github.com/CarlosMacedo/folder-structure-node/issues"
   },
   "homepage": "https://github.com/CarlosMacedo/folder-structure-node#readme",
+  "_moduleAliases": {
+    "@utils": "src/shared/utils",
+    "@schemas": "src/shared/schemas",
+    "@models": "src/shared/models",
+    "@routers": "src/controller/routers",
+    "@middlewares": "src/controller/middlewares",
+    "@handleErrors": "src/controller/handleErrors",
+    "@app": "src/app"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
@@ -37,6 +46,7 @@
     "joi-password-complexity": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.19",
+    "module-alias": "^2.2.2",
     "mongoose": "^5.9.28",
     "slugify": "^1.4.5",
     "validator": "^13.1.1",

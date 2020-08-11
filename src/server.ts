@@ -1,7 +1,8 @@
 import 'express-async-errors';
+import 'module-alias/register';
 import config from 'config';
 import { app } from './app';
-import { startupDebugger } from './shared/utils';
+import { startupDebugger } from '@utils';
 
 process.on('uncaughtException', (err) => {
   console.log(err);

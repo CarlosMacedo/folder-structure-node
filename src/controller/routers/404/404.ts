@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { AppError } from '../../handleErrors/models/appError';
+import { AppError } from '@handleErrors/models/appError';
 
 export const notFound = async (
   req: Request,

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Fawn from 'fawn';
-import { Log } from '../shared/utils';
-import { dbDebugger } from '../shared/utils';
+import { Log } from '@utils';
+import { dbDebugger } from '@utils';
 
 export function initDatabases(dbUrl: string): Log {
   mongoose

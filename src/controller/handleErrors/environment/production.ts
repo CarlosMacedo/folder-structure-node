@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { AppError } from '../../handleErrors/models/appError';
-import { loggerMongoDB } from '../../../app';
+import { AppError } from '@handleErrors/models/appError';
+import { loggerMongoDB } from '@app';
 
 export function production(
   err: AppError,
