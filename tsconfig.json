@@ -2,9 +2,16 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
+    "target": "es6",
     "baseUrl": "",
     "paths": {
       "@app": ["src/app"],
+      "@utils": ["src/shared/utils"],
+      "@schemas": ["src/shared/schemas"],
+      "@models": ["src/shared/models"],
+      "@middlewares": ["src/controller/middlewares"],
+      "@routers": ["src/controller/routers"],
+      "@handleErrors": ["src/controller/handleErrors"],
       "@utils/*": ["src/shared/utils/*"],
       "@schemas/*": ["src/shared/schemas/*"],
       "@models/*": ["src/shared/models/*"],

@@ -1,1 +1,1 @@
-export { dataSchema } from './dataSchema';
+export { DataSchema } from './dataSchema';

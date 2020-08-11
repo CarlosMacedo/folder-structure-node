@@ -1,4 +1,5 @@
-import express, { Router } from 'express';
+import express = require('express');
+import { Router } from 'express';
 import { notFound } from './404';
 
 export function createRouterNotFound(): Router {

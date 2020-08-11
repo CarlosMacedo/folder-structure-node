@@ -1,5 +1,5 @@
-import express from 'express';
-import config from 'config';
+import express = require('express');
+import config = require('config');
 
 import { createRouterMe, createRouterNotFound } from '@routers';
 

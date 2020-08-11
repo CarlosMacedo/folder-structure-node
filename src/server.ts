@@ -1,6 +1,6 @@
 import 'express-async-errors';
 import 'module-alias/register';
-import config from 'config';
+import config = require('config');
 import { app } from './app';
 import { startupDebugger } from '@utils';
 

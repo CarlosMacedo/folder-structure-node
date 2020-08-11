@@ -1,12 +1,12 @@
-import express from 'express';
-import cors from 'cors';
-import compression from 'compression';
-import mongoSanitize from 'express-mongo-sanitize';
+import express = require('express');
+import cors = require('cors');
+import compression = require('compression');
+import mongoSanitize = require('express-mongo-sanitize');
 import xss from 'xss-clean';
-import rateLimit from 'express-rate-limit';
+import rateLimit = require('express-rate-limit');
 import helmet from 'helmet';
-import hpp from 'hpp';
-import morgan from 'morgan';
+import hpp = require('hpp');
+import morgan = require('morgan');
 import { middlewareDebugger } from '@utils';
 import { hw } from '@middlewares/helloworld';
 

@@ -1,4 +1,4 @@
-import config from 'config';
+import config = require('config');
 
 export function getMongoDBUrl(): string {
   let dbUrl: string = config.get('db.url');

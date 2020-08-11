@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose = require('mongoose');
 import Fawn from 'fawn';
 import { Log } from '@utils';
 import { dbDebugger } from '@utils';
