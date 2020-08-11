@@ -9,10 +9,10 @@ import {
 } from './init';
 
 const app = express();
+const loggerMongoDB = initDatabases(getMongoDBUrl());
 
 initMiddlewares(app);
 initRouters(app);
-const loggerMongoDB = initDatabases(getMongoDBUrl());
 initHandleErrors(app);
 
 export { app, loggerMongoDB };
