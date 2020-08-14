@@ -11,8 +11,8 @@ import { middlewareDebugger } from '@utils';
 import { hw } from '@middlewares/helloworld';
 
 const limiter = rateLimit({
-  max: 1000,
-  windowMs: 60 * 60 * 1000, //in 1h
+  max: 100,
+  windowMs: 15 * 60 * 1000, //in 15min
   message: 'Too many requests from this IP, please try again later.'
 });
 

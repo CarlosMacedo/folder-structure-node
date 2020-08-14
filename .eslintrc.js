@@ -6,14 +6,15 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'standard'
+    'standard',
+    'plugin:security/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'security'],
   rules: {
     semi: [2, 'always'],
     'space-before-function-paren': ['error', 'never'],
