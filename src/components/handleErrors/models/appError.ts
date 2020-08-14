@@ -3,12 +3,12 @@ export class AppError extends Error {
   private _status: string;
   private _isOperational: boolean;
 
-  constructor(message: string, statusCode: number) {
+  constructor(message: string, statusCode: number, isOperational: boolean) {
     super(message);
 
     this._statusCode = statusCode;
     this._status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
-    this._isOperational = true;
+    this._isOperational = isOperational;
 
     Error.captureStackTrace(this, this.constructor);
   }

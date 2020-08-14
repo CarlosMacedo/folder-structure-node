@@ -6,5 +6,9 @@ export const notFound = async (
   res: Response,
   next: NextFunction
 ) => {
-  throw new AppError(`Can't find ${req.originalUrl} on this server! :(`, 404);
+  throw new AppError(
+    `Can't find ${req.originalUrl} on this server! :(`,
+    404,
+    true
+  );
 };
