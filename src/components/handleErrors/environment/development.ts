@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { AppError } from '@handleErrors/models/AppError';
+import { AppError } from '@handleErrors/models';
 
 export function development(
   err: AppError,
