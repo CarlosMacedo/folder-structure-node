@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '@handleErrors/models';
+import { sendMailToAdminIfCritical } from '@handleErrors/utils';
 import { loggerMongoDB } from '@app';
 
 export function production(
@@ -17,8 +18,7 @@ export function production(
     });
   } else {
     loggerMongoDB.saveLog(err);
-    // sendMailToAdminIfCritical();
-    // saveInOpsQueueIfCritical();
+    sendMailToAdminIfCritical();
 
     return res.status(err.statusCode).json({
       status: 'error',
