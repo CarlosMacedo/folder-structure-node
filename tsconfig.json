@@ -6,18 +6,21 @@
     "baseUrl": "",
     "paths": {
       "@app": ["src/app"],
-      "@utils": ["src/shared/utils"],
-      "@schemas": ["src/shared/schemas"],
-      "@models": ["src/shared/models"],
-      "@middlewares": ["src/controller/middlewares"],
-      "@routers": ["src/controller/routers"],
-      "@handleErrors": ["src/controller/handleErrors"],
-      "@utils/*": ["src/shared/utils/*"],
-      "@schemas/*": ["src/shared/schemas/*"],
-      "@models/*": ["src/shared/models/*"],
-      "@middlewares/*": ["src/controller/middlewares/*"],
-      "@routers/*": ["src/controller/routers/*"],
-      "@handleErrors/*": ["src/controller/handleErrors/*"]
+
+      "@handleErrors": ["src/components/handleErrors"],
+      "@handleErrors/*": ["src/components/handleErrors/*"],
+
+      "@middlewares": ["src/shared/controller/middlewares"],
+      "@middlewares/*": ["src/shared/controller/middlewares/*"],
+      "@models": ["src/shared/controller/models"],
+      "@models/*": ["src/shared/controller/models/*"],
+      "@routers": ["src/shared/controller/routers"],
+      "@routers/*": ["src/shared/controller/routers/*"],
+
+      "@schemas": ["src/shared/model/schemas"],
+      "@schemas/*": ["src/shared/model/schemas/*"],
+      "@utils": ["src/shared/model/utils"],
+      "@utils/*": ["src/shared/model/utils/*"]
     }
   },
   "exclude": ["node_modules"]

@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/CarlosMacedo/folder-structure-node#readme",
   "_moduleAliases": {
-    "@utils": "src/shared/utils",
-    "@schemas": "src/shared/schemas",
-    "@models": "src/shared/models",
-    "@routers": "src/controller/routers",
-    "@middlewares": "src/controller/middlewares",
-    "@handleErrors": "src/controller/handleErrors",
-    "@app": "src/app"
+    "@app": "src/app",
+    "@handleErrors": "src/components/handleErrors",
+    "@middlewares": "src/shared/controller/middlewares",
+    "@models": "src/shared/controller/models",
+    "@routers": "src/shared/controller/routers",
+    "@schemas": "src/shared/model/schemas",
+    "@utils": "src/shared/model/utils"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

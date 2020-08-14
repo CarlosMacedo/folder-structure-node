@@ -1,6 +1,6 @@
 import mongoose = require('mongoose');
 import Fawn from 'fawn';
-import { Log } from '@utils';
+import { Log } from '@models';
 import { dbDebugger } from '@utils';
 
 export function initDatabases(dbUrl: string): Log {
